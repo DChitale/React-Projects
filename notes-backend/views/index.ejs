@@ -23,15 +23,19 @@
                     <div class="flex justify-between">
                             <a href="/files/<%=val%>" class="inline-block text-blue-500">Read More..</a>
                             <a href="/edit/<%=val%>" class="inline-block text-zinc-500">edit.</a>
+                         
 
                     </div>
-                
+                 <form action="/delete/<%=val%>" method="POST">
+                          <input type="hidden" name="filename" value="example.txt">
+                          <button class=" cursor-pointer text-white w-full  rounded bg-red-700 mt-3" type="submit">Delete File</button>
+                    </form>
                     </div>
                  <% }) %>
               <% } else { %>
 <h3 class="text-zinc-500 mt-15">No Task yet</h3>
                 <% } %>
-                    
+                  
         </div>
     </div>
   </body>

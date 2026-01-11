@@ -22,6 +22,15 @@ app.get("/",function(req,res){
 })
 
 
+app.post("/delete/:filename",function(req,res){
+
+   
+    fs.unlink(`./files/${req.params.filename}`, (err)=>{
+      
+        res.redirect("/")
+    })
+})
+
 app.post("/create",function(req,res){
     fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`,req.body.details,function(err){
         if(err) throw err;
